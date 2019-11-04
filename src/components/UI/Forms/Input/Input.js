@@ -9,7 +9,7 @@ function Input(props) {
         <input
           type="input"
           className="InputElement"
-          onChange={props.onChange}
+          onChange={props.changed}
           {...props.elementConfig}
         />
       );
@@ -19,7 +19,7 @@ function Input(props) {
         <textarea
           type="input"
           className="InputElement"
-          onChange={props.onChange}
+          onChange={props.changed}
           {...props.elementConfig}
         />
       );
@@ -28,7 +28,7 @@ function Input(props) {
       inputElem = (
         <select
           className="InputElement"
-          onChange={props.onChange}
+          onChange={props.changed}
           {...props.elementConfig}
         >
           {props.elementConfig.options.map(option => (
@@ -45,7 +45,7 @@ function Input(props) {
         <input
           type="input"
           className="InputElement"
-          onChange={props.onChange}
+          onChange={props.changed}
           {...props.elementConfig}
         />
       );

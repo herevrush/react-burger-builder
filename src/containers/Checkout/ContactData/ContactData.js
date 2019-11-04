@@ -157,12 +157,12 @@ class ContactData extends Component {
     const updatedElem = {
       ...updatedOrderForm[id]
     };
-    updatedElem.value = event.target.value;
+    updatedElem.elementConfig.value = event.target.value;
     updatedElem.valid = this.checkValidity(
       event.target.value,
       updatedElem.validation
     );
-    console.log(updatedElem);
+
     updatedOrderForm[id] = updatedElem;
     this.setState({ OrderForm: updatedOrderForm });
   };
@@ -186,7 +186,7 @@ class ContactData extends Component {
               name={element.id}
               elementConfig={element.config.elementConfig}
               value={element.config.elementConfig.value}
-              onChange={event => this.inputChangeHandler(event, element.id)}
+              changed={event => this.inputChangeHandler(event, element.id)}
             />
           );
         })}

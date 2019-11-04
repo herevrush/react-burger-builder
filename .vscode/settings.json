@@ -1,0 +1,4 @@
+{
+    "search.quickOpen.includeSymbols": true,
+    "autoimport.filesToScan": "**/*.{ts,tsx,js}"
+}

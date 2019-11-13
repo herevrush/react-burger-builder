@@ -11,6 +11,7 @@
     margin-bottom: 8px;
 }
 
+
 .InputElement {
     outline: none;
     border: 1px solid #ccc;
@@ -25,4 +26,14 @@
 .InputElement:focus {
     outline: none;
     background-color: #ccc;
+}
+
+.Invalid {
+    border: 1px solid red;
+    background-color: lightpink;
+}
+
+.ValidationError {
+    color: red;
+    margin: 5px 0;
 }

@@ -3,12 +3,21 @@ import "./Input.css";
 
 function Input(props) {
   let inputElem = null;
+  let errorMessages = null;
+
+  const classes = ["InputElement"];
+
+  if (props.invalid && props.shouldValidate && props.touched) {
+    errorMessages = "Please enter a valid " + props.label;
+    classes.push("Invalid");
+  }
+  const classNames = classes.join(" ");
   switch (props.type) {
     case "input":
       inputElem = (
         <input
           type="input"
-          className="InputElement"
+          className={classNames}
           onChange={props.changed}
           {...props.elementConfig}
         />
@@ -18,7 +27,7 @@ function Input(props) {
       inputElem = (
         <textarea
           type="input"
-          className="InputElement"
+          className={classNames}
           onChange={props.changed}
           {...props.elementConfig}
         />
@@ -27,7 +36,7 @@ function Input(props) {
     case "select":
       inputElem = (
         <select
-          className="InputElement"
+          className={classNames}
           onChange={props.changed}
           {...props.elementConfig}
         >
@@ -44,7 +53,7 @@ function Input(props) {
       inputElem = (
         <input
           type="input"
-          className="InputElement"
+          className={classNames}
           onChange={props.changed}
           {...props.elementConfig}
         />
@@ -54,6 +63,7 @@ function Input(props) {
     <div className="Input">
       <label className="InputLabel"> {props.label}</label>
       {inputElem}
+      <p className="ValidationError">{errorMessages}</p>
     </div>
   );
 }
